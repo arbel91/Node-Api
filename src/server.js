@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan')
 const routerHome = require('./routers/home')
-const routerMovie = require('./routers/home')
+const routerMovie = require('./routers/movie')
 // setings
 app.set('port', process.env.PORT || 3000)
 
