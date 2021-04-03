@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan')
-
+const routerHome = require('./routers/home')
+const routerMovie = require('./routers/home')
 // setings
 app.set('port', process.env.PORT || 3000)
 
@@ -11,9 +12,8 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
 // Routes
-app.get('/', (req, res) => {
-    res.send('hola mundo')
-})
+app.use(routerHome)
+app.use('/api/movies', routerMovie)
 
 // started server 
 app.listen(app.get('port'), () => {
